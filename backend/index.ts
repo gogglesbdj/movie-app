@@ -2,10 +2,12 @@ import express, { Request, Response } from 'express';
 import axios from 'axios';
 import mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 5000;
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 const TMDB_API_URL = 'https://api.themoviedb.org/3/discover/tv';

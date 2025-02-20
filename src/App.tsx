@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMoviesByGenre, selectMovie, clearMovie, Movie } from './store/moviesSlice';
+import { RootState, AppDispatch } from './store/store';
+import Header from './components/Header';
+import MovieList from './components/MovieList';
+import MovieModal from './components/MovieModal';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { comedy, crime, selectedMovie, status } = useSelector((state: RootState) => state.movies);
+
+  useEffect(() => {
+    dispatch(fetchMoviesByGenre('35'));
+    dispatch(fetchMoviesByGenre('80'));
+  }, [dispatch]);
+
+  const handleMovieClick = (movie: Movie) => {
+    dispatch(selectMovie(movie));
+  };
+
+  const handleModalClose = () => {
+    dispatch(clearMovie());
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="App">
+      <Header />
+      <section>
+        <h2>Comedy</h2>
+        {status === 'loading' ? <p>Loading...</p> : <MovieList movies={comedy} onMovieClick={handleMovieClick} />}
+      </section>
+      <section>
+        <h2>Crime</h2>
+        {status === 'loading' ? <p>Loading...</p> : <MovieList movies={crime} onMovieClick={handleMovieClick} />}
+      </section>
+      {selectedMovie && <MovieModal movie={selectedMovie} onClose={handleModalClose} />}
+    </div>
+  );
+};
 
-export default App
+export default App;
