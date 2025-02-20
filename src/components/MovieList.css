@@ -1,0 +1,23 @@
+.movie-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: true;
+}
+
+.movie-card {
+    flex: 0 0 auto;
+    cursor: pointer;
+    width: 150px;
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.movie-card p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
