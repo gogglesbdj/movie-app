@@ -27,10 +27,12 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
+      <hr />
       <section>
         <h2>Comedy</h2>
         {status === 'loading' ? <p>Loading...</p> : <MovieList movies={comedy} onMovieClick={handleMovieClick} />}
       </section>
+      <hr />
       <section>
         <h2>Crime</h2>
         {status === 'loading' ? <p>Loading...</p> : <MovieList movies={crime} onMovieClick={handleMovieClick} />}
