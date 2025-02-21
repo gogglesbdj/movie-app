@@ -8,16 +8,20 @@ This app uses React TypeScript + Vite with an Express + MongoDB backend. It fetc
 - **npm**
 - **MongoDB Atlas**
 
-## Environment Variables
+## Running the App
 
-### Backend
+1. **Clone the repository** and open the project folder.
+2. **Backend**:
 
-Create a `.env` file in the `backend` folder with:
+   - Open a terminal in the `backend` folder.
+   - Run `npx ts-node-dev index.ts`
+   - The backend server should start on [http://localhost:5000](http://localhost:5000).
 
-```ts
-PORT=5000 TMDB_API_KEY=YOUR_TMDB_API_KEY MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@cluster0.xxxxx.mongodb.net/movieApp?retryWrites=true&w=majority
-```
+3. **Frontend**:
+   - Open another terminal in the project root (where `package.json` is located).
+   - Run `npm run dev`.
+   - The frontend should open on [http://localhost:5173](http://localhost:5173).
 
-### Frontend
+Now you can open [http://localhost:5173](http://localhost:5173) and see the app. It will fetch data from the backend on [http://localhost:5000](http://localhost:5000).
 
-Create a `.env` file in the root of the project with:
+**Note**: Make sure the backend ([http://localhost:5000](http://localhost:5000)) is running before you start the frontend.
