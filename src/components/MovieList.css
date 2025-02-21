@@ -1,8 +1,15 @@
+.movie-list-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 1rem;
+}
+
 .movie-list {
     display: flex;
     overflow-x: auto;
     gap: 2rem;
-    padding: true;
+    padding: 1rem;
 }
 
 .movie-card {
@@ -14,6 +21,7 @@
 
 .movie-card:hover {
     transform: scale(1.1);
+    z-index: 2;
 }
 
 .movie-card img {
@@ -23,6 +31,6 @@
 
 .movie-card p {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
 }
