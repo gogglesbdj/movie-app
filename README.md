@@ -13,7 +13,10 @@ This app uses React TypeScript + Vite with an Express + MongoDB backend. It fetc
 ### Backend
 
 Create a `.env` file in the `backend` folder with:
+
+```ts
 PORT=5000 TMDB_API_KEY=YOUR_TMDB_API_KEY MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@cluster0.xxxxx.mongodb.net/movieApp?retryWrites=true&w=majority
+```
 
 ### Frontend
 
