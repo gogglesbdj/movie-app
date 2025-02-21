@@ -3,8 +3,8 @@ import './Header.css';
 
 const Header: React.FC = () => (
     <header className='header'>
+        <h1>Movie App</h1>
         <img src='/logo.png' alt='logo' className='logo' />
-        <h1 className='title'>Movie App</h1>
     </header>
 );
 
