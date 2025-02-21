@@ -1,14 +1,19 @@
 .movie-list {
     display: flex;
     overflow-x: auto;
-    gap: 1rem;
+    gap: 2rem;
     padding: true;
 }
 
 .movie-card {
     flex: 0 0 auto;
     cursor: pointer;
-    width: 150px;
+    width: 180px;
+    transition: transform 0.2 ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.1);
 }
 
 .movie-card img {
