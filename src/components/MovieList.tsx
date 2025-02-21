@@ -9,13 +9,15 @@ interface MovieListProps {
 
 const MovieList: React.FC<MovieListProps> = ({ movies, onMovieClick }) => {
     return (
-        <div className="movie-list">
-            {movies.map((movie) => (
-                <div key={movie.id} className="movie-card" onClick={() => onMovieClick(movie)}>
-                    <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.name} />
-                    <p>{movie.name}</p>
-                </div>
-            ))}
+        <div className="movie-list-wrapper">
+            <div className="movie-list">
+                {movies.map((movie) => (
+                    <div key={movie.id} className="movie-card" onClick={() => onMovieClick(movie)}>
+                        <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.name} />
+                        <p>{movie.name}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

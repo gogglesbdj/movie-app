@@ -11,8 +11,9 @@
 }
 
 .modal-content {
-    background: white;
+    background: #3A3E40;
     padding: 1rem;
+    text-align: center;
     border-radius: 8px;
     max-width: 500px;
     width: 90%;
@@ -21,10 +22,11 @@
 
 .close-btn {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 1rem;
+    right: 1rem;
     background: transparent;
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
+    color: white;
 }
