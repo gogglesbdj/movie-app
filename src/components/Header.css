@@ -2,11 +2,12 @@
     display: flex;
     align-items: center;
     padding: 1rem;
-    background-color: #222;
+    background-color: #337591;
     color: #fff;
+    font-size: large;
 }
 
 .logo {
-    height: 50px;
-    margin-right: 1rem;
+    height: 100px;
+    margin-right: 4rem;
 }
