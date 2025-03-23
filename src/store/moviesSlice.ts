@@ -33,6 +33,13 @@ const initialState: MoviesState = {
     status: 'idle',
 };
 
+/*
+Add proper error handling using rejectWithValue
+Add type for the API response
+Add proper error message extraction
+Add try catch for every async thunk api call
+Send id param as number instead of string, backend shouldn't need to parse it
+ */
 export const fetchMoviesByGenre = createAsyncThunk(
     'movies/fetchByGenre',
     async (genreId: string) => {

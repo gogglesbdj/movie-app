@@ -7,6 +7,10 @@ import MovieList from './components/MovieList';
 import MovieModal from './components/MovieModal';
 import './App.css';
 
+/**
+  Add MoviesState type for the below Redux state
+  we can use Promise.all in the useEffect to fetch both genres concurrently
+ */
 const App: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { comedy, crime, selectedMovie, status } = useSelector((state: RootState) => state.movies);
